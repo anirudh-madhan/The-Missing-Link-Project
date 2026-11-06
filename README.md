@@ -1,140 +1,122 @@
-# THE MISSING LINK
+# The Missing Link
 
-A professional healthcare platform connecting patients with hospitals and healthcare services. Built with React, Flask, and MySQL.
+### Patient Journey & Healthcare Access Navigator
+
+The Missing Link is a healthcare access platform designed to simplify the patient journey by connecting patients with hospitals, doctors, and essential healthcare services through a single application.
+
+The platform helps users discover healthcare facilities, explore available services, manage appointments, access visit history, and review important accessibility and language information.
 
 ---
 
-## 🚀 Quick Start
+## Overview
 
-### Prerequisites
-- Python 3.8+
-- Node.js 16+
-- MySQL 5.7+
+Navigating healthcare services often involves multiple steps, from finding a suitable hospital to booking an appointment and keeping track of visits.
 
-### 1. Backend Setup
+The Missing Link brings these essential steps together in one platform, helping patients make more informed decisions and manage their healthcare journey more conveniently.
 
-```bash
-cd backend
+The application provides separate interfaces for patients and administrators, along with a dedicated system validation module.
 
-# Create virtual environment (optional but recommended)
-python -m venv venv
-source venv/bin/activate  # On Windows: venv\Scripts\activate
+## Features
 
-# Install dependencies
-pip install -r requirements.txt
+### Patient Features
 
-# Configure database
-# Edit config.py with your MySQL credentials
-# Default: localhost, root, missing_link_db
+- **Hospital Discovery:** Browse and search hospitals using available filters such as city, specialty, language, and accessibility.
+- **Hospital Details:** Explore hospital information, available specialties, and associated doctors.
+- **Appointment Booking:** Book appointments with available doctors.
+- **Appointment Management:** View, reschedule, and cancel appointments.
+- **Past Records:** Access previous and upcoming appointment history.
+- **Hospital Recommendations:** Receive hospital suggestions based on preferences such as specialty, location, language, and accessibility requirements.
+- **Multilingual Support:** Switch between English and Tamil.
+- **Accessibility Information:** Review available accessibility features of healthcare facilities.
+- **Profile Management:** View and update personal profile information.
 
-# Run migrations (creates tables)
-python -c "from app import create_app, db; app = create_app(); app.app_context().push(); db.create_all()"
+### Admin Features
 
-# Seed demo data
-python seed_data.py
+- **Admin Dashboard:** View hospital and appointment statistics.
+- **Hospital Management:** Add, update, and manage hospital records.
+- **Doctor Management:** Maintain doctor information and availability.
+- **Appointment Management:** View appointments and update their completion status.
 
-# Start server
-python app.py
+### System Validation
+
+- **Constraint Lab:** Run predefined healthcare-related scenario checks.
+- **Test Results:** View pass/fail results for executed scenarios.
+- **Audit Logs:** Review recorded constraint test executions.
+
+---
+
+## Technology Stack
+
+| Layer | Technologies |
+|---|---|
+| Frontend | React 18, React Router, Axios, Vite, CSS3 |
+| Backend | Python, Flask |
+| Authentication | Flask-JWT-Extended, Werkzeug |
+| API | REST API, Flask-CORS |
+| ORM | SQLAlchemy, Flask-SQLAlchemy |
+| Database | MySQL |
+| Database Driver | PyMySQL |
+
+---
+
+## System Architecture
+
+The application follows a client-server architecture.
+
+1. The React frontend provides the user interface.
+2. The Flask backend handles API requests, authentication, and application logic.
+3. SQLAlchemy manages database operations.
+4. MySQL stores application data.
+
+```text
+        User
+         |
+         v
+   React Frontend
+      (Vite)
+         |
+         | REST API
+         v
+    Flask Backend
+         |
+         v
+     SQLAlchemy
+         |
+         v
+      MySQL DB
 ```
 
-Backend runs on: **http://localhost:5000**
-
-### 2. Frontend Setup
-
-```bash
-cd frontend
-
-# Install dependencies
-npm install
-
-# Start development server
-npm run dev
-```
-
-Frontend runs on: **http://localhost:5173**
-
 ---
 
-## 🔐 Demo Credentials
+## Project Structure
 
-### Patient Account
-- **Email:** john.doe@email.com
-- **Password:** patient123
-- Access: Dashboard, Appointments, Hospitals, Profile
-
-### Admin Account
-- **Email:** admin@hospital.com
-- **Password:** admin123
-- Access: All patient features + Admin Dashboard
-
----
-
-## 🏗️ Tech Stack
-
-### Frontend
-- **React 18** - UI framework
-- **React Router** - Navigation
-- **Axios** - HTTP client
-- **Vite** - Build tool
-- **CSS3** - Styling (custom dark theme)
-
-### Backend
-- **Flask** - Web framework
-- **Flask-JWT-Extended** - Authentication
-- **Flask-CORS** - Cross-origin requests
-- **SQLAlchemy** - ORM
-- **PyMySQL** - MySQL driver
-- **Werkzeug** - Password hashing
-
-### Database
-- **MySQL** - Primary database
-- Tables: users, hospitals, doctors, appointments, constraint_logs
-
----
-
-## 📁 Project Structure
-
-```
-missing-link-proj/
+```text
+The-Missing-Link-Project/
+│
 ├── backend/
-│   ├── app.py                 # Flask application entry point
-│   ├── config.py              # Configuration (DB, JWT)
-│   ├── models.py              # Database models
-│   ├── requirements.txt       # Python dependencies
-│   ├── seed_data.py          # Demo data seeder
-│   ├── routes/
-│   │   ├── auth.py           # Authentication endpoints
-│   │   ├── hospitals.py      # Hospital CRUD
-│   │   ├── appointments.py   # Appointment management
-│   │   ├── admin.py          # Admin operations
-│   │   └── constraints.py    # Constraint testing
-│   └── venv/                 # Virtual environment
+│   ├── app.py
+│   ├── config.py
+│   ├── models.py
+│   ├── requirements.txt
+│   ├── seed_data.py
+│   │
+│   └── routes/
+│       ├── auth.py
+│       ├── hospitals.py
+│       ├── appointments.py
+│       ├── admin.py
+│       └── constraints.py
 │
 ├── frontend/
 │   ├── src/
-│   │   ├── App.jsx           # Main application component
-│   │   ├── App.css           # Global theme styles
-│   │   ├── index.css         # Base styles
-│   │   ├── theme-fixes.css   # Theme consistency fixes
-│   │   ├── config.js         # API URL & translations
 │   │   ├── components/
-│   │   │   └── Navbar.jsx    # Navigation bar
 │   │   ├── pages/
-│   │   │   ├── Landing.jsx   # Landing page
-│   │   │   ├── Login.jsx     # Login page
-│   │   │   ├── Register.jsx  # Registration page
-│   │   │   ├── Dashboard.jsx # User dashboard
-│   │   │   ├── Hospitals.jsx # Hospital search
-│   │   │   ├── HospitalDetails.jsx
-│   │   │   ├── BookAppointment.jsx
-│   │   │   ├── Appointments.jsx
-│   │   │   ├── PastRecords.jsx
-│   │   │   ├── Recommendations.jsx
-│   │   │   ├── Profile.jsx
-│   │   │   ├── ConstraintLab.jsx
-│   │   │   └── AdminDashboard.jsx
-│   │   └── services/
-│   │       └── api.js        # API service layer
+│   │   ├── services/
+│   │   ├── App.jsx
+│   │   ├── App.css
+│   │   ├── index.css
+│   │   └── config.js
+│   │
 │   ├── package.json
 │   └── vite.config.js
 │
@@ -143,326 +125,229 @@ missing-link-proj/
 
 ---
 
-## 🎨 Design System
+## Getting Started
 
-### Color Palette
-- **Background:** `#090909` - Deep black
-- **Cards:** `#191719` - Dark charcoal
-- **Borders:** `#383033` - Subtle grey
-- **Primary Text:** `#F5F0E8` - Warm white
-- **Secondary Text:** `#B8ADA5` - Muted beige
-- **Headings:** `#C52B3B` - Professional red
-- **Buttons:** `#B52637` - Burgundy
-- **Hover:** `#D8BD91` - Golden beige
-- **Success:** `#65C995` - Mint green
-- **Error:** `#E35B65` - Coral red
+Follow these instructions to set up and run the project locally.
 
-### Typography
-- **Headings:** Manrope (800 weight)
-- **Body:** DM Sans (400-700 weight)
-- Professional, healthcare-focused aesthetic
+### Prerequisites
 
----
+Make sure the following are installed:
 
-## 🌟 Features
+- Python 3.8 or later
+- Node.js and npm
+- MySQL Server
+- Git
 
-### For Patients
-- 🔍 **Hospital Search** - Find hospitals by location, specialty, language
-- 📅 **Appointment Booking** - Book, reschedule, or cancel appointments
-- 🏥 **Hospital Details** - View doctors, specialties, bed availability
-- 💡 **Smart Recommendations** - AI-powered hospital suggestions
-- 📋 **Past Records** - View appointment history
-- 🌐 **Multilingual** - English and Tamil support
-- ♿ **Accessibility Info** - Wheelchair access, special needs support
-
-### For Admins
-- 📊 **Dashboard Analytics** - Hospital stats, appointment metrics
-- 🏥 **Hospital Management** - Add/edit/delete hospitals
-- 👨‍⚕️ **Doctor Management** - Manage doctor profiles
-- 📋 **Appointment Overview** - View and manage all appointments
-- ✅ **Complete Appointments** - Mark appointments as completed
-
-### For Developers
-- 🧪 **Constraint Lab** - Test system against 12 healthcare scenarios
-- 📝 **Audit Logs** - Track all constraint test executions
-- 🔬 **Real-time Testing** - Run constraint tests with live results
-
----
-
-## 🔧 Configuration
-
-### Backend Configuration (`backend/config.py`)
-
-```python
-# Database
-MYSQL_HOST = 'localhost'
-MYSQL_USER = 'root'
-MYSQL_PASSWORD = 'YOUR_PASSWORD'
-MYSQL_DB = 'missing_link_db'
-MYSQL_PORT = 3306
-
-# JWT
-JWT_SECRET_KEY = 'your-secret-key-change-in-production'
-JWT_ACCESS_TOKEN_EXPIRES = timedelta(hours=24)
-
-# CORS
-CORS_ORIGINS = ['http://localhost:5173', 'http://localhost:3000']
-```
-
-### Frontend Configuration (`frontend/src/config.js`)
-
-```javascript
-export const API_BASE_URL = 'http://localhost:5000/api';
-
-export const LANGUAGES = {
-  en: 'English',
-  ta: 'Tamil'
-};
-```
-
----
-
-## 📡 API Endpoints
-
-### Authentication
-- `POST /api/auth/register` - Register new user
-- `POST /api/auth/login` - User login
-- `GET /api/auth/profile` - Get user profile (requires JWT)
-- `PUT /api/auth/profile` - Update profile (requires JWT)
-
-### Hospitals
-- `GET /api/hospitals` - List all hospitals (with filters)
-- `GET /api/hospitals/:id` - Get hospital details
-- `POST /api/hospitals/recommendations` - Get personalized recommendations
-- `GET /api/hospitals/:id/doctors` - Get hospital doctors
-- `GET /api/hospitals/specialties` - List all specialties
-- `GET /api/hospitals/cities` - List all cities
-
-### Appointments
-- `GET /api/appointments` - List user appointments
-- `GET /api/appointments/:id` - Get appointment details
-- `POST /api/appointments` - Book appointment
-- `PUT /api/appointments/:id` - Update appointment
-- `DELETE /api/appointments/:id` - Cancel appointment
-- `GET /api/appointments/available-slots` - Get doctor availability
-
-### Admin (Admin only)
-- `GET /api/admin/stats` - Dashboard statistics
-- `POST /api/admin/hospitals` - Create hospital
-- `PUT /api/admin/hospitals/:id` - Update hospital
-- `DELETE /api/admin/hospitals/:id` - Delete hospital
-- `POST /api/admin/doctors` - Create doctor
-- `PUT /api/admin/doctors/:id` - Update doctor
-- `POST /api/admin/appointments/:id/complete` - Mark complete
-
-### Constraint Lab
-- `GET /api/constraints` - List all constraints
-- `GET /api/constraints/:id` - Get constraint details
-- `POST /api/constraints/:id/test` - Run constraint test
-- `GET /api/constraints/logs` - Get test logs
-
----
-
-## 🧪 Testing
-
-### Manual Testing Checklist
-
-**Patient Flow:**
-1. ✅ Register new account (with age)
-2. ✅ Login as patient
-3. ✅ Search hospitals
-4. ✅ View hospital details
-5. ✅ Book appointment
-6. ✅ View appointments
-7. ✅ Check past records
-8. ✅ Update profile
-9. ✅ Change language
-
-**Admin Flow:**
-1. ✅ Login as admin
-2. ✅ View admin dashboard
-3. ✅ Manage hospitals
-4. ✅ Manage doctors
-5. ✅ Complete appointments
-
-**Constraint Lab:**
-1. ✅ Run test scenarios (C01-C12)
-2. ✅ View results (PASS/FAIL)
-3. ✅ Check audit logs
-
-### Automated Testing
+### 1. Clone the Repository
 
 ```bash
-# Backend tests
+git clone https://github.com/anirudh-madhan/The-Missing-Link-Project.git
+
+cd The-Missing-Link-Project
+```
+
+### 2. Configure the MySQL Database
+
+Start your MySQL server and create the database:
+
+```sql
+CREATE DATABASE missing_link_db;
+```
+
+Update the database credentials in `backend/config.py`, or provide the corresponding environment variables:
+
+```text
+MYSQL_HOST=localhost
+MYSQL_USER=root
+MYSQL_PASSWORD=your_mysql_password
+MYSQL_DB=missing_link_db
+MYSQL_PORT=3306
+```
+
+Use your own MySQL credentials.
+
+### 3. Set Up the Backend
+
+Navigate to the backend directory:
+
+```bash
 cd backend
-python test_authentication.py
 ```
 
----
+Create a virtual environment:
 
-## 🔒 Security Features
+**Windows PowerShell**
 
-- **JWT Authentication** - Secure token-based auth
-- **Password Hashing** - Werkzeug PBKDF2-SHA256
-- **CORS Protection** - Configured allowed origins
-- **Input Validation** - Server-side validation
-- **SQL Injection Prevention** - SQLAlchemy ORM
-- **XSS Protection** - React auto-escaping
+```powershell
+python -m venv venv
+.\venv\Scripts\Activate.ps1
+```
 
----
+**macOS / Linux**
 
-## 🌐 Browser Support
-
-- ✅ Chrome 90+
-- ✅ Firefox 88+
-- ✅ Edge 90+
-- ✅ Safari 14+
-- ✅ Mobile browsers (iOS Safari, Chrome Mobile)
-
----
-
-## 📱 Responsive Design
-
-- **Desktop:** 1920px and above - Full layout
-- **Laptop:** 1366px - Optimized layout
-- **Tablet:** 768px - Adjusted grids
-- **Mobile:** 375px and above - Single column
-
----
-
-## 🐛 Troubleshooting
-
-### Backend Issues
-
-**Database connection error:**
 ```bash
-# Check MySQL is running
-mysql -u root -p
-
-# Verify database exists
-SHOW DATABASES;
-
-# Update config.py with correct credentials
+python -m venv venv
+source venv/bin/activate
 ```
 
-**Module not found:**
+Install the required Python packages:
+
 ```bash
 pip install -r requirements.txt
 ```
 
-### Frontend Issues
+Start the Flask application:
 
-**Can't see text (white on white):**
 ```bash
-# Hard refresh browser
-Ctrl + F5 (Windows)
-Cmd + Shift + R (Mac)
+python app.py
 ```
 
-**API connection refused:**
-- Verify backend is running on port 5000
-- Check `frontend/src/config.js` has correct API_BASE_URL
+The application creates the required database tables when it starts.
 
-**401 Unauthorized:**
-- Logout and login again
-- Check localStorage has token
-- Verify JWT_SECRET_KEY matches in backend
+Backend URL:
 
-### Common Fixes
+```text
+http://localhost:5000
+```
+
+### 4. Set Up the Frontend
+
+Open a separate terminal and navigate to the frontend directory:
 
 ```bash
-# Clear browser cache and storage
-# Open DevTools (F12) > Application > Clear Storage
+cd frontend
+```
 
-# Restart backend
+Install dependencies:
+
+```bash
+npm install
+```
+
+Start the Vite development server:
+
+```bash
+npm run dev
+```
+
+Frontend URL (default):
+
+```text
+http://localhost:5173
+```
+
+### 5. Access the Application
+
+Open the frontend URL in your browser.
+
+Make sure both the Flask backend and React frontend development servers are running.
+
+---
+
+## Demo Credentials
+
+The following sample accounts are created by the database seeding script.
+
+**Patient Account**
+
+```text
+Email: john.doe@email.com
+Password: patient123
+```
+
+**Admin Account**
+
+```text
+Email: admin@hospital.com
+Password: admin123
+```
+
+These credentials are intended only for local demonstration and testing. Do not use them in a deployed environment.
+
+### Loading Sample Data
+
+To populate the database with sample users, hospitals, doctors, and appointments:
+
+```bash
 cd backend
-python app.py
+python seed_data.py
+```
 
-# Restart frontend
+**Important:** The current seeding script drops and recreates the database tables before inserting sample data. Run it only when you are comfortable replacing the existing data.
+
+---
+
+## API Modules
+
+The Flask backend provides REST API endpoints organized into the following modules:
+
+| Module | Description |
+|---|---|
+| Authentication | User registration, login, and profile management |
+| Hospitals | Hospital listings, details, specialties, cities, and recommendations |
+| Appointments | Booking, retrieval, updates, cancellation, and availability |
+| Administration | Hospital and doctor management, statistics, and appointment operations |
+| Constraint Lab | Scenario retrieval, test execution, and audit logs |
+
+The `backend/routes/` directory contains the API implementation and should be referred to for exact endpoint paths and request formats.
+
+---
+
+## Security
+
+The application includes the following security-related mechanisms:
+
+- JWT-based authentication.
+- Password hashing using Werkzeug.
+- Backend request validation.
+- SQLAlchemy ORM for database operations.
+- Configured CORS handling.
+- Protected endpoints for authenticated operations.
+
+For deployment, configure strong and unique application secrets, disable debug mode, restrict allowed origins, and use HTTPS with appropriate database access controls.
+
+---
+
+## Running the Application
+
+The application requires two separate terminal sessions.
+
+**Terminal 1 – Backend**
+
+```bash
+cd backend
+venv\Scripts\activate
+python app.py
+```
+
+**Terminal 2 – Frontend**
+
+```bash
 cd frontend
 npm run dev
 ```
 
----
-
-## 🚀 Deployment
-
-### Production Checklist
-
-**Backend:**
-- [ ] Change JWT_SECRET_KEY to strong random value
-- [ ] Change SECRET_KEY to strong random value
-- [ ] Set DEBUG = False
-- [ ] Configure production database
-- [ ] Set up HTTPS
-- [ ] Configure production CORS origins
-- [ ] Use production WSGI server (gunicorn)
-- [ ] Set up logging
-
-**Frontend:**
-- [ ] Update API_BASE_URL to production backend
-- [ ] Build production bundle: `npm run build`
-- [ ] Deploy `dist/` folder to hosting
-- [ ] Configure HTTPS
-- [ ] Set up CDN (optional)
-
-**Database:**
-- [ ] Backup database regularly
-- [ ] Use strong passwords
-- [ ] Limit remote access
-- [ ] Enable SSL connections
+Open the frontend URL displayed by Vite to use the application.
 
 ---
 
-## 📄 License
+## Future Enhancements
 
-This project is created for educational and demonstration purposes.
+Potential areas for further development include:
 
----
-
-## 👥 Contributors
-
-Built for healthcare accessibility and patient empowerment.
-
----
-
-## 📞 Support
-
-For issues or questions:
-1. Check troubleshooting section above
-2. Verify all dependencies are installed
-3. Check browser console for errors
-4. Verify backend logs for API errors
+- Integration with real-time hospital and doctor availability.
+- Secure medical document storage and management.
+- Appointment reminders and follow-up notifications.
+- Expanded language support.
+- Enhanced accessibility features.
+- Integration with external healthcare services.
 
 ---
 
-## 🎯 Project Status
+## License
 
-**Status:** ✅ **Production Ready**
-
-**Last Updated:** 2024
-
-**Version:** 2.0
+No license has currently been specified for this repository.
 
 ---
 
-## 📝 Notes
-
-### Registration
-- Age input field (1-120 years)
-- Backend calculates approximate birth year
-- Age is optional
-
-### Authentication
-- JWT tokens expire after 24 hours
-- String identity used for consistency
-- Tokens stored in localStorage
-
-### Data
-- Demo data included via `seed_data.py`
-- Contains sample hospitals, doctors, appointments
-- Safe to use for testing and demos
-
----
-
-**Ready for hackathon demonstration and production deployment! 🚀**
+**The Missing Link — Connecting patients to the healthcare services they need.**
