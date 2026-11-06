@@ -1,0 +1,42 @@
+
+.auth-container{min-height:100vh;display:flex;justify-content:center;align-items:center;padding:36px 16px;background:radial-gradient(circle at 15% 15%,rgba(179,38,50,.25),transparent 35%),radial-gradient(circle at 90% 90%,rgba(210,185,141,.10),transparent 30%),#09090b}
+.auth-card{width:100%;max-width:490px;padding:42px;background:linear-gradient(145deg,#1b1a1e,#121215);border:1px solid rgba(210,185,141,.22);border-radius:20px;box-shadow:0 28px 80px rgba(0,0,0,.48)}
+.auth-header{text-align:center;margin-bottom:28px}
+.auth-header h1{font-family:Manrope,sans-serif;font-size:2rem;font-weight:800;letter-spacing:-.05em;color:#f4eee6}
+.auth-tagline{color:#b5aaa0;font-size:.9rem;margin-top:7px}
+.auth-title{text-align:center;color:#f4eee6;font-size:1.45rem;margin-bottom:24px}
+.auth-form{margin-bottom:20px}
+.auth-form .btn{width:100%;margin-top:5px;padding:13px}
+.auth-footer{text-align:center;padding:20px 0;border-top:1px solid rgba(255,255,255,.1);color:#bcb4ad}
+.auth-footer a{color:#d2b98d;font-weight:700;text-decoration:none}
+.auth-footer a:hover{color:#f0d9ae}
+.auth-demo{margin-top:18px;padding-top:20px;border-top:1px solid rgba(255,255,255,.1)}
+.auth-demo h3{text-align:center;color:#d2b98d;font-size:.9rem;margin-bottom:13px}
+.demo-credentials{display:grid;grid-template-columns:1fr 1fr;gap:12px;background:#222126;border:1px solid rgba(255,255,255,.07);padding:14px;border-radius:12px;font-size:.8rem}
+.demo-credentials strong{display:block;color:#e1c99e;margin-bottom:7px}
+.demo-credentials p{margin:4px 0;color:#c8c0b7;overflow-wrap:anywhere}
+
+/* Enhanced date picker styling */
+.date-input {
+  cursor: pointer;
+  color-scheme: dark;
+}
+
+.date-input::-webkit-calendar-picker-indicator {
+  filter: invert(1) brightness(0.9) sepia(0.2) hue-rotate(10deg) saturate(1.5);
+  cursor: pointer;
+  padding: 5px;
+  border-radius: 3px;
+  transition: all 0.2s ease;
+}
+
+.date-input::-webkit-calendar-picker-indicator:hover {
+  filter: invert(1) brightness(1.1) sepia(0.3) hue-rotate(10deg) saturate(2);
+  background: rgba(210, 185, 141, 0.1);
+}
+
+.date-input:focus::-webkit-calendar-picker-indicator {
+  filter: invert(1) brightness(1.2) sepia(0.4) hue-rotate(10deg) saturate(2);
+}
+
+@media(max-width:520px){.auth-card{padding:28px 20px}.auth-header h1{font-size:1.65rem}.demo-credentials{grid-template-columns:1fr}}

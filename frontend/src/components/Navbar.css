@@ -1,0 +1,21 @@
+
+.navbar{position:sticky;top:0;z-index:100;background:rgba(13,13,16,.94);backdrop-filter:blur(18px);border-bottom:1px solid rgba(210,185,141,.18);box-shadow:0 8px 30px rgba(0,0,0,.22)}
+.navbar-container{max-width:1480px;margin:auto;min-height:82px;padding:12px clamp(16px,3vw,42px);display:flex;align-items:center;justify-content:space-between;gap:22px}
+.navbar-brand{text-decoration:none;min-width:190px;display:flex;flex-direction:column;gap:3px}
+.navbar-brand h1{font-family:Manrope,sans-serif;font-size:1.22rem;letter-spacing:-.04em;color:#f7f2ea;font-weight:800}
+.navbar-brand h1:before{content:'';display:inline-block;width:7px;height:7px;background:#b32632;border-radius:2px;margin:0 9px 2px 0;box-shadow:0 0 12px rgba(179,38,50,.7)}
+.navbar-tagline{font-size:.66rem;letter-spacing:.13em;text-transform:uppercase;color:#918a85;padding-left:16px}
+.navbar-menu{display:flex;align-items:center;justify-content:center;gap:5px;flex:1}
+.nav-link{position:relative;color:#c7c0b9;text-decoration:none;font-size:.84rem;font-weight:600;padding:11px 12px;border-radius:8px;transition:all .22s ease;white-space:nowrap}
+.nav-link:hover,.nav-link.active{color:#171513;background:#d2b98d;box-shadow:0 5px 18px rgba(210,185,141,.16);transform:translateY(-1px)}
+.nav-link-admin{color:#e18b91}
+.navbar-actions{display:flex;align-items:center;gap:12px}
+.language-toggle{display:flex;padding:3px;background:#202024;border:1px solid #373238;border-radius:8px}
+.lang-btn{background:transparent;border:0;color:#b8b0a8;padding:6px 9px;border-radius:6px;cursor:pointer;font-size:.75rem}
+.lang-btn.active{background:#d2b98d;color:#171513;font-weight:800}
+.user-profile{display:flex;align-items:center;gap:8px;color:#eee8df;text-decoration:none;font-size:.82rem;font-weight:600}
+.user-avatar{width:32px;height:32px;display:grid;place-items:center;border-radius:50%;background:#9f2631;color:white;font-weight:800;border:1px solid #d06b72}
+.user-name{max-width:105px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.navbar-actions .btn{white-space:nowrap}
+@media(max-width:1100px){.navbar-container{flex-wrap:wrap}.navbar-menu{order:3;flex-basis:100%;overflow-x:auto;justify-content:flex-start;padding-bottom:4px}.navbar-actions{margin-left:auto}}
+@media(max-width:560px){.navbar-container{gap:10px}.navbar-brand{min-width:0}.navbar-brand h1{font-size:1rem}.navbar-tagline{font-size:.55rem}.user-name{display:none}.navbar-actions{gap:6px}.nav-link{font-size:.78rem;padding:9px}.navbar-actions .btn{padding:8px 10px;font-size:.75rem}}

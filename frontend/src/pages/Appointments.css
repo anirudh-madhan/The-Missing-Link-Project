@@ -1,0 +1,9 @@
+.appointments-page {
+  padding: 2rem 0;
+}
+
+.appointments-page h1 {
+  font-size: 2rem;
+  color: var(--primary-color);
+  margin-bottom: 2rem;
+}

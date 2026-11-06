@@ -1,0 +1,99 @@
+.hospital-details {
+  padding: 2rem 0;
+}
+
+.hospital-details-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 2rem;
+  gap: 2rem;
+}
+
+.hospital-details-header h1 {
+  font-size: 2rem;
+  color: var(--primary-color);
+  margin-bottom: 0.5rem;
+}
+
+.hospital-rating-large {
+  font-size: 2rem;
+  background-color: #fef3c7;
+  color: #92400e;
+  padding: 1rem 1.5rem;
+  border-radius: 12px;
+  font-weight: 700;
+}
+
+.hospital-details-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+  margin-bottom: 2rem;
+}
+
+.detail-section {
+  margin-bottom: 2rem;
+}
+
+.detail-section h3 {
+  color: var(--primary-color);
+  font-size: 1.25rem;
+  margin-bottom: 1rem;
+}
+
+.detail-section p {
+  color: var(--text-color);
+  margin: 0.5rem 0;
+  font-size: 1rem;
+}
+
+.specialties-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.doctors-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 1.5rem;
+  margin-top: 1.5rem;
+}
+
+.doctor-card {
+  background-color: var(--light-gray);
+  padding: 1.5rem;
+  border-radius: 8px;
+}
+
+.doctor-card h3 {
+  color: var(--primary-color);
+  font-size: 1.1rem;
+  margin-bottom: 0.5rem;
+}
+
+.doctor-specialty {
+  color: var(--secondary-color);
+  font-weight: 600;
+  margin: 0.5rem 0;
+}
+
+.doctor-qualification {
+  color: var(--medium-gray);
+  font-size: 0.9rem;
+  margin: 0.5rem 0;
+}
+
+.doctor-fee {
+  color: var(--text-color);
+  font-weight: 600;
+  margin: 1rem 0;
+  font-size: 1.1rem;
+}
+
+@media (max-width: 768px) {
+  .hospital-details-header {
+    flex-direction: column;
+  }
+}

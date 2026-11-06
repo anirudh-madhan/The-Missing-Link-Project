@@ -1,0 +1,332 @@
+/* ============================================
+   PROFESSIONAL THEME FIXES
+   Apply consistent dark theme across all pages
+   ============================================ */
+
+/* Hospital Pages */
+.hospitals-page,
+.hospital-details,
+.hospital-card,
+.filters-card {
+  color: var(--text-primary);
+}
+
+.hospitals-page h1,
+.hospitals-page h2,
+.hospitals-page h3 {
+  color: var(--heading-color);
+}
+
+.hospitals-page .card {
+  background: var(--card-bg);
+  border-color: var(--border-color);
+}
+
+.hospital-card {
+  background: var(--card-bg) !important;
+  border: 1px solid var(--border-color);
+}
+
+.hospital-header h3 {
+  color: var(--text-primary) !important;
+}
+
+.hospital-address,
+.hospital-info .info-item {
+  color: var(--text-secondary) !important;
+}
+
+.filters-card {
+  background: var(--card-bg) !important;
+}
+
+/* Appointments */
+.appointments-page,
+.appointment-card,
+.booking-info {
+  color: var(--text-primary);
+}
+
+.appointment-card {
+  background: var(--card-bg) !important;
+  border-color: var(--border-color) !important;
+}
+
+.appointment-card h3,
+.appointment-card h4 {
+  color: var(--text-primary) !important;
+}
+
+.appointment-card p {
+  color: var(--text-secondary) !important;
+}
+
+/* Recommendations */
+.recommendations-page,
+.recommendation-card {
+  color: var(--text-primary);
+}
+
+.recommendation-card {
+  background: var(--card-bg) !important;
+  border: 1px solid var(--border-color);
+}
+
+.recommendation-card h3 {
+  color: var(--text-primary) !important;
+}
+
+.recommendation-score {
+  background: rgba(216, 189, 145, 0.15);
+  color: var(--hover-gold) !important;
+}
+
+/* Profile */
+.profile-page .card {
+  background: var(--card-bg);
+  color: var(--text-primary);
+}
+
+.profile-info .info-row strong {
+  color: var(--hover-gold);
+}
+
+.profile-info .info-row span {
+  color: var(--text-primary);
+}
+
+/* Admin Dashboard */
+.admin-dashboard .card {
+  background: var(--card-bg);
+  color: var(--text-primary);
+}
+
+.admin-dashboard h1,
+.admin-dashboard h2,
+.admin-dashboard h3 {
+  color: var(--heading-color);
+}
+
+/* Ensure all cards are dark */
+[class*="-card"],
+[class*="-page"] .card,
+.card {
+  background: var(--card-bg);
+  color: var(--text-primary);
+  border-color: var(--border-color);
+}
+
+/* Ensure all headings are visible */
+[class*="-page"] h1,
+[class*="-page"] h2,
+[class*="-page"] h3,
+[class*="-page"] h4 {
+  color: var(--heading-color);
+}
+
+/* Ensure all labels are visible */
+[class*="-page"] label,
+.form-label {
+  color: var(--text-primary);
+}
+
+/* Ensure all text content is visible */
+[class*="-page"] p,
+[class*="-page"] span,
+[class*="-card"] p,
+[class*="-card"] span {
+  color: var(--text-secondary);
+}
+
+/* Strong text should stand out */
+strong {
+  color: var(--text-primary);
+  font-weight: 700;
+}
+
+/* Links within cards */
+.card a,
+[class*="-card"] a {
+  color: var(--hover-gold);
+}
+
+/* Doctor cards specifically */
+.doctor-card {
+  background: var(--card-bg) !important;
+  border: 1px solid var(--border-color);
+}
+
+.doctor-card h3,
+.doctor-card h4 {
+  color: var(--text-primary) !important;
+}
+
+.doctor-specialty,
+.doctor-qualification,
+.doctor-fee {
+  color: var(--text-secondary) !important;
+}
+
+/* Info sections */
+.detail-section h3,
+.info-section h3 {
+  color: var(--hover-gold) !important;
+}
+
+/* Lists and grids */
+.specialties-list .badge,
+.languages-list .badge {
+  background: rgba(216, 189, 145, 0.15);
+  color: var(--hover-gold);
+  border: 1px solid rgba(216, 189, 145, 0.3);
+}
+
+/* Hospital Details specific */
+.hospital-details-header h1 {
+  color: var(--text-primary) !important;
+}
+
+.hospital-details-header p {
+  color: var(--text-secondary) !important;
+}
+
+.hospital-rating-large {
+  background: rgba(216, 189, 145, 0.15);
+  color: var(--hover-gold);
+  padding: 0.75rem 1.25rem;
+  border-radius: 12px;
+  font-weight: 700;
+}
+
+/* Booking form */
+.booking-info {
+  background: var(--card-bg);
+}
+
+.booking-info h2,
+.booking-info h3 {
+  color: var(--text-primary) !important;
+}
+
+.booking-info p {
+  color: var(--text-secondary) !important;
+}
+
+/* Past Records */
+.history-page {
+  color: var(--text-primary);
+}
+
+.history-hero h1 {
+  color: var(--heading-color) !important;
+}
+
+.history-hero p {
+  color: var(--text-secondary) !important;
+}
+
+.history-record {
+  background: var(--card-bg);
+  border-color: var(--border-color);
+}
+
+.history-record h2 {
+  color: var(--text-primary) !important;
+}
+
+.history-doctor,
+.history-meta,
+.history-notes {
+  color: var(--text-secondary) !important;
+}
+
+/* Status badges in history */
+.history-status.is-complete {
+  background: rgba(101, 201, 149, 0.15);
+  color: var(--success);
+}
+
+.history-status.is-cancelled {
+  background: rgba(227, 91, 101, 0.15);
+  color: var(--error);
+}
+
+/* Stats cards */
+.history-stat {
+  background: var(--card-bg);
+  border-color: var(--border-color);
+}
+
+.history-stat span {
+  color: var(--text-secondary);
+}
+
+.history-stat strong {
+  color: var(--text-primary);
+}
+
+/* Empty states */
+.history-empty,
+.no-results,
+.empty-state {
+  color: var(--text-secondary);
+}
+
+.history-empty h2 {
+  color: var(--text-primary) !important;
+}
+
+/* Search and filters */
+.history-search input,
+.history-filters button {
+  background: var(--card-bg);
+  color: var(--text-primary);
+  border-color: var(--border-color);
+}
+
+.history-filters button.selected {
+  background: var(--button-primary);
+  color: white;
+  border-color: var(--button-primary);
+}
+
+/* Checkbox labels */
+.checkbox-label {
+  color: var(--text-primary);
+}
+
+/* Distance and location info */
+.distance,
+.location-info {
+  color: var(--text-secondary) !important;
+}
+
+/* Reasons in recommendations */
+.reasons .reason {
+  color: var(--success);
+}
+
+/* Quick info bars */
+.hospital-quick-info span {
+  color: var(--text-secondary);
+}
+
+/* Demo credentials in login */
+.demo-credentials {
+  background: rgba(197, 43, 59, 0.08);
+  border-color: rgba(197, 43, 59, 0.2);
+}
+
+.demo-credentials strong {
+  color: var(--hover-gold);
+}
+
+.demo-credentials p {
+  color: var(--text-primary) !important;
+}
+
+/* Ensure readability everywhere */
+* {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
